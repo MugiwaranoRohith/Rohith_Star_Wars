@@ -1,0 +1,70 @@
+<div *ngIf="loading" class="loading">Loading character details...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div *ngIf="!loading && character" class="container">
+  <div class="sidebar">
+    <div class="avatar">
+      <div class="avatar-icon">🌐</div>
+    </div>
+    <p><strong>Name:</strong> {{ character.name }}</p>
+    <p><strong>Birth Year:</strong> {{ character.birth_year }}</p>
+    <p><strong>Gender:</strong> {{ character.gender }}</p>
+    <p><strong>Height:</strong> {{ character.height }} cm</p>
+    <p><strong>Weight:</strong> {{ character.mass }} kg</p>
+    <p>
+      <strong>Created at:</strong>
+      {{ character.created | date : "dd/MM/yyyy hh:mm a" }}
+    </p>
+    <p>
+      <strong>Edited at:</strong>
+      {{ character.edited | date : "dd/MM/yyyy hh:mm a" }}
+    </p>
+    <p><strong>Hair color:</strong> {{ character.hair_color }}</p>
+    <p><strong>Eye color:</strong> {{ character.eye_color }}</p>
+    <p><strong>Skin color:</strong> {{ character.skin_color }}</p>
+    <p><strong>Planet Name:</strong> {{ character.homeworldName }}</p>
+    <p>
+      <strong>Species:</strong> <em>{{ character.speciesNames }}</em>
+    </p>
+  </div>
+
+  <div class="main-content">
+    <section>
+      <h3>FILMS</h3>
+      <div class="card">
+        <ng-container *ngIf="character.filmTitles !== 'N/A'; else noFilms">
+          <p *ngFor="let filmTitle of character.filmTitles.split(',')">
+            {{ filmTitle.trim() }}
+          </p>
+        </ng-container>
+        <ng-template #noFilms><p>N/A</p></ng-template>
+      </div>
+    </section>
+
+    <section>
+      <h3>VEHICLES</h3>
+      <div class="card">
+        <ng-container *ngIf="character.vehicleNames !== 'N/A'; else noVehicles">
+          <p *ngFor="let vehicleName of character.vehicleNames.split(',')">
+            {{ vehicleName.trim() }}
+          </p>
+        </ng-container>
+        <ng-template #noVehicles><p>N/A</p></ng-template>
+      </div>
+    </section>
+
+    <section>
+      <h3>STARSHIPS</h3>
+      <div class="card">
+        <ng-container
+          *ngIf="character.starshipNames !== 'N/A'; else noStarships"
+        >
+          <p *ngFor="let starshipName of character.starshipNames.split(',')">
+            {{ starshipName.trim() }}
+          </p>
+        </ng-container>
+        <ng-template #noStarships><p>N/A</p></ng-template>
+      </div>
+    </section>
+  </div>
+</div>

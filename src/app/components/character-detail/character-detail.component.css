@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+.container {
+  display: flex;
+  background: radial-gradient(ellipse at center, #000000 0%, #0d1117 100%);
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #feda4a;
+  font-family: 'Orbitron', sans-serif;
+  color: #feda4a;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #feda4a;
+  border: 1px solid #feda4a;
+  text-align: center;
+  font-size: 14px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background: #121212;
+  border-radius: 50%;
+  margin: 0 auto 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #feda4a;
+}
+
+.avatar-icon {
+  font-size: 36px;
+  color: #feda4a;
+}
+
+.sidebar p {
+  margin: 6px 0;
+  color: #feda4a;
+  font-size: 13px;
+}
+
+.sidebar strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-left: 30px;
+  color: #feda4a;
+}
+
+h3 {
+  color: #feda4a;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #feda4a;
+  padding-bottom: 6px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px #feda4a33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #feda4a55;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #feda4a99;
+}
+
+.card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #fff5cc;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px auto;
+  color: #feda4a;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
