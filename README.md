@@ -1,59 +1,40 @@
-# StarWarsApp
+# Star Wars Angular App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+A Star Wars character browser built with Angular, consuming data from the [Star Wars API (SWAPI)](https://swapi.info/api/).  
+This project demonstrates filtering, pagination, and displaying rich Star Wars data such as films, species, vehicles, and starships.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
-```
+- Display list of Star Wars characters with pagination
+- Filter characters by movie, species, vehicle and starship
+- View detailed information about each character
+- Fetch and display related data (films, species, vehicles, starships) efficiently using RxJS
+- Responsive UI with a Star Wars-inspired design and custom fonts
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Demo
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+*Add your deployed demo link here if available*
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Installation
 
-```bash
-ng generate --help
-```
+1. Clone the repository
 
-## Building
+   git clone https://github.com/MugiwaranoRohith/Rohith_Star_Wars.git
+   cd star-wars-app
 
-To build the project run:
+2. Install dependencies
+    npm install
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. Run the development server
+   ng serve
 
-## Running unit tests
+4. Open your browser and navigate to
+    http://localhost:4200
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
