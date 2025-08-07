@@ -132,6 +132,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
+  
 }
 
 th, td {
@@ -205,4 +206,22 @@ select {
 
 select:hover {
   background: #00897b;
+}
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ffe81f;
+  background-color: #000;
+  color: #ffe81f;
+}
+
+input::placeholder {
+  color: #ffe81f;
+  opacity: 0.85;
+  text-shadow: 0 0 4px #ffe81f;
 }

@@ -26,7 +26,7 @@ This project demonstrates filtering, pagination, and displaying rich Star Wars d
 1. Clone the repository
 
    git clone https://github.com/MugiwaranoRohith/Rohith_Star_Wars.git
-   cd star-wars-app
+   cd Rohith_Star_Wars
 
 2. Install dependencies
     npm install

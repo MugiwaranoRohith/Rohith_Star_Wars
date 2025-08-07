@@ -5,46 +5,67 @@
   </header>
 
   <div class="content">
-  <aside class="filters-panel">
-  <h2>Filters</h2>
+    <aside class="filters-panel">
+      <h2>Filters</h2>
 
-<label>
-  Movie Name
-  <select [(ngModel)]="selectedMovie">
-    <option value="">All</option>
-    <option *ngFor="let movie of movies" [value]="movie.title">{{ movie.title }}</option>
-  </select>
-</label>
+      <label>
+        Movie Name
+        <select [(ngModel)]="selectedMovie">
+          <option value="">All</option>
+          <option *ngFor="let movie of movies" [value]="movie.title">
+            {{ movie.title }}
+          </option>
+        </select>
+      </label>
 
-<label>
-  Vehicle
-  <select [(ngModel)]="selectedVehicle">
-    <option value="">All</option>
-    <option *ngFor="let vehicle of vehiclesList" [value]="vehicle.name">{{ vehicle.name }}</option>
-  </select>
-</label>
+      <label>
+        Vehicle
+        <select [(ngModel)]="selectedVehicle">
+          <option value="">All</option>
+          <option *ngFor="let vehicle of vehiclesList" [value]="vehicle.name">
+            {{ vehicle.name }}
+          </option>
+        </select>
+      </label>
 
-<label>
-  Starship
-  <select [(ngModel)]="selectedStarship">
-    <option value="">All</option>
-    <option *ngFor="let starship of starshipsList" [value]="starship.name">{{ starship.name }}</option>
-  </select>
-</label>
+      <label>
+        Starship
+        <select [(ngModel)]="selectedStarship">
+          <option value="">All</option>
+          <option
+            *ngFor="let starship of starshipsList"
+            [value]="starship.name"
+          >
+            {{ starship.name }}
+          </option>
+        </select>
+      </label>
 
-<label>
-  Species
-  <select [(ngModel)]="selectedSpecies">
-    <option value="">All</option>
-    <option *ngFor="let specie of speciesList" [value]="specie.name">{{ specie.name }}</option>
-  </select>
-</label>
+      <label>
+        Species
+        <select [(ngModel)]="selectedSpecies">
+          <option value="">All</option>
+          <option *ngFor="let specie of speciesList" [value]="specie.name">
+            {{ specie.name }}
+          </option>
+        </select>
+      </label>
+      <label>
+        Birth Year From
+        <input
+          type="text"
+          placeholder="e.g. 30BBY"
+          [(ngModel)]="birthYearFrom"
+        />
+      </label>
 
+      <label>
+        Birth Year To
+        <input type="text" placeholder="e.g. 5ABY" [(ngModel)]="birthYearTo" />
+      </label>
 
-
-  <button (click)="onSearch()">SEARCH</button>
-</aside>
-
+      <button (click)="onSearch()">SEARCH</button>
+    </aside>
 
     <section class="results-panel">
       <h2>Search Results ({{ filteredCharacters.length }})</h2>
@@ -64,21 +85,26 @@
         <tbody>
           <tr *ngFor="let char of pagedCharacters; let i = index">
             <td>{{ (currentPage - 1) * pageSize + i + 1 }}</td>
- <td>
-  <a  [routerLink]="['/character', char.id]">{{ char.name }}</a>
-  </td>            <td>{{ char.speciesNames || 'N/A' }}</td>
-            <td>{{ char.birth_year || 'N/A' }}</td>
-            <td>{{ char.filmTitles || 'N/A' }}</td>
-            <td>{{ char.vehicleNames || 'N/A' }}</td>
-            <td>{{ char.starshipNames || 'N/A' }}</td>
+            <td>
+              <a [routerLink]="['/character', char.id]">{{ char.name }}</a>
+            </td>
+            <td>{{ char.speciesNames || "N/A" }}</td>
+            <td>{{ char.birth_year || "N/A" }}</td>
+            <td>{{ char.filmTitles || "N/A" }}</td>
+            <td>{{ char.vehicleNames || "N/A" }}</td>
+            <td>{{ char.starshipNames || "N/A" }}</td>
           </tr>
         </tbody>
       </table>
 
       <div class="pagination">
-        <button (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
+        <button (click)="prevPage()" [disabled]="currentPage === 1">
+          Prev
+        </button>
         <span>Page {{ currentPage }} of {{ totalPages }}</span>
-        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+          Next
+        </button>
       </div>
     </section>
   </div>
